@@ -13,6 +13,8 @@
 		39D657DC1B267B3400A073FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D657DB1B267B3400A073FB /* Images.xcassets */; };
 		39D657DF1B267B3400A073FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D657DD1B267B3400A073FB /* LaunchScreen.xib */; };
 		39D657EB1B267B3400A073FB /* StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657EA1B267B3400A073FB /* StatusTests.swift */; };
+		39D657F51B267EF600A073FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657F41B267EF600A073FB /* User.swift */; };
+		39D657F71B26800600A073FB /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657F61B26800600A073FB /* Update.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		39D657E41B267B3400A073FB /* StatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D657E91B267B3400A073FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39D657EA1B267B3400A073FB /* StatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
+		39D657F41B267EF600A073FB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		39D657F61B26800600A073FB /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				39D657D41B267B3400A073FB /* AppDelegate.swift */,
 				39D657D61B267B3400A073FB /* ViewController.swift */,
 				39D657D81B267B3400A073FB /* Main.storyboard */,
+				39D657F61B26800600A073FB /* Update.swift */,
+				39D657F41B267EF600A073FB /* User.swift */,
 				39D657DB1B267B3400A073FB /* Images.xcassets */,
 				39D657DD1B267B3400A073FB /* LaunchScreen.xib */,
 				39D657D21B267B3400A073FB /* Supporting Files */,
@@ -214,6 +220,8 @@
 			files = (
 				39D657D71B267B3400A073FB /* ViewController.swift in Sources */,
 				39D657D51B267B3400A073FB /* AppDelegate.swift in Sources */,
+				39D657F71B26800600A073FB /* Update.swift in Sources */,
+				39D657F51B267EF600A073FB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
