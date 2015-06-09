@@ -15,6 +15,8 @@
 		39D657EB1B267B3400A073FB /* StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657EA1B267B3400A073FB /* StatusTests.swift */; };
 		39D657F51B267EF600A073FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657F41B267EF600A073FB /* User.swift */; };
 		39D657F71B26800600A073FB /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657F61B26800600A073FB /* Update.swift */; };
+		39D657FA1B26955200A073FB /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657F81B26955200A073FB /* UpdateTableViewCell.swift */; };
+		39D657FB1B26955200A073FB /* UpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39D657F91B26955200A073FB /* UpdateTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		39D657EA1B267B3400A073FB /* StatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
 		39D657F41B267EF600A073FB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		39D657F61B26800600A073FB /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		39D657F81B26955200A073FB /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
+		39D657F91B26955200A073FB /* UpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				39D657D41B267B3400A073FB /* AppDelegate.swift */,
 				39D657D61B267B3400A073FB /* ViewController.swift */,
 				39D657D81B267B3400A073FB /* Main.storyboard */,
+				39D657F81B26955200A073FB /* UpdateTableViewCell.swift */,
+				39D657F91B26955200A073FB /* UpdateTableViewCell.xib */,
 				39D657F61B26800600A073FB /* Update.swift */,
 				39D657F41B267EF600A073FB /* User.swift */,
 				39D657DB1B267B3400A073FB /* Images.xcassets */,
@@ -200,6 +206,7 @@
 			files = (
 				39D657DA1B267B3400A073FB /* Main.storyboard in Resources */,
 				39D657DF1B267B3400A073FB /* LaunchScreen.xib in Resources */,
+				39D657FB1B26955200A073FB /* UpdateTableViewCell.xib in Resources */,
 				39D657DC1B267B3400A073FB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D657D71B267B3400A073FB /* ViewController.swift in Sources */,
+				39D657FA1B26955200A073FB /* UpdateTableViewCell.swift in Sources */,
 				39D657D51B267B3400A073FB /* AppDelegate.swift in Sources */,
 				39D657F71B26800600A073FB /* Update.swift in Sources */,
 				39D657F51B267EF600A073FB /* User.swift in Sources */,

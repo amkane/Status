@@ -56,10 +56,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // TODO: Make this cell reuseable
-        var cell = UITableViewCell()
+        
+        var cell = NSBundle.mainBundle().loadNibNamed("UpdateTableViewCell", owner: self, options: nil).first as! UpdateTableViewCell
+   
+       //  var cell = UpdateTableViewCell()
         if let  updates = updates {
             var update = updates[indexPath.row]
-            cell.textLabel?.text = update.text
+            cell.updateTextLabel?.text = update.text
         }
         
         
