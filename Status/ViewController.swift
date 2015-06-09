@@ -31,12 +31,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         user.city = "San Francisco"
         user.link = "http://alexkanemusic.com"
         
-        var update = Update()
-        update.date = NSDate()
-        update.text = "Hello World"
-        update.user = user
+        for var i = 0; i < 100; i++ {
+            var update = Update()
+            update.date = NSDate()
+            update.text = "Hello World \(i)"
+            update.user = user
+            
+            updates?.append(update)
+        }
         
-        updates?.append(update)
+        
+        
     }
     
     //MARK: - UITableViewDataSource
