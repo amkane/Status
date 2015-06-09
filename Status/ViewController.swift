@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var updates: [Update]?
     
@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
-        
+        tableView.delegate = self
         
         // TODO: remove this sample data
         updates = [Update]()
@@ -58,8 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         // TODO: Make this cell reuseable
         
         var cell = NSBundle.mainBundle().loadNibNamed("UpdateTableViewCell", owner: self, options: nil).first as! UpdateTableViewCell
-   
-       //  var cell = UpdateTableViewCell()
+        
+        //  var cell = UpdateTableViewCell()
         if let  updates = updates {
             var update = updates[indexPath.row]
             cell.updateTextLabel?.text = update.text
@@ -70,7 +70,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     
-    
+    // MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100.00
+    }
     
 }
 
