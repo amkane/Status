@@ -14,4 +14,5 @@ class User {
     var userName: String?
     var link: String?
     var city: String?
+    
 }
