@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate {
     
-    var updates: [Update]?
+    var updates = [Update]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
         
         
-
+        
         
         
     }
@@ -39,10 +39,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let updatesCount = updates?.count {
+        let updatesCount = updates.count
             return updatesCount
-        }
-        return 0
+        
     }
     
     
@@ -52,18 +51,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var cell = NSBundle.mainBundle().loadNibNamed("UpdateTableViewCell", owner: self, options: nil).first as! UpdateTableViewCell
         
         //  var cell = UpdateTableViewCell()
-        if let  updates = updates {
-            var update = updates[indexPath.row]
-            cell.updateTextLabel?.text = update.text
-            
-            var user = update.user
-            if let user = update.user {
-                cell.updateUsername.text = user.userName
-                cell.updateUser.text = user.name
-                cell.updateCity.text = user.city
-            }
-            
+        var update = updates[indexPath.row]
+        cell.updateTextLabel?.text = update.text
+        
+        var user = update.user
+        if let user = update.user {
+            cell.updateUsername.text = user.userName
+            cell.updateUser.text = user.name
+            cell.updateCity.text = user.city
         }
+        
+        
         
         
         return cell
@@ -81,7 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let jsonObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! NSArray
         
-        updates = [Update]()
+        
         
         for var i = 0; i < jsonObject.count; i++ {
             let updateJSON = jsonObject[i] as! [String: AnyObject]
@@ -108,7 +106,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             update.user = user
             
-            updates?.append(update)
+            updates.append(update)
         }
         tableView.reloadData()
     }
