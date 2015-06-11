@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate {
     
     var updates: [Update]?
     
@@ -21,24 +21,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        // TODO: remove this sample data
-        updates = [Update]()
         
-        var user = User()
-        user.userName = "Alex"
-        user.name = "Alex Kane"
-        user.bio = "Me"
-        user.city = "San Francisco"
-        user.link = "http://alexkanemusic.com"
         
-        for var i = 0; i < 100; i++ {
-            var update = Update()
-            update.date = NSDate()
-            update.text = "Hello World \(i)"
-            update.user = user
-            
-            updates?.append(update)
-        }
+        // how to retrieve data from the interwebs, in this case a json file
+        
+        let urlString = "https://rawgit.com/jamescmartinez/Status/master/updates.json"
+        let url = NSURL(string: urlString)
+        let request = NSURLRequest(URL: url!)
+        let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+        
+        
+        
+        
+        
+        
+        
+        //        // TODO: remove this sample data
+        //        updates = [Update]()
+        //
+        //        var user = User()
+        //        user.userName = "Alex"
+        //        user.name = "Alex Kane"
+        //        user.bio = "Me"
+        //        user.city = "San Francisco"
+        //        user.link = "http://alexkanemusic.com"
+        //
+        //        for var i = 0; i < 100; i++ {
+        //            var update = Update()
+        //            update.date = NSDate()
+        //            update.text = "Hello World \(i)"
+        //            update.user = user
+        //
+        //            updates?.append(update)
+        //        }
         
         
         
@@ -70,7 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 cell.updateUser.text = user.name
                 cell.updateCity.text = user.city
             }
-  
+            
         }
         
         
@@ -81,6 +96,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100.00
+    }
+    
+    
+    // MARK: - NSURLConnectionDataDelegate
+    func connection(connection: NSURLConnection, didReceiveData data: NSData){
+    println(data)
+        println(connection)
     }
     
 }
