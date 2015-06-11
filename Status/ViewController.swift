@@ -101,8 +101,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - NSURLConnectionDataDelegate
     func connection(connection: NSURLConnection, didReceiveData data: NSData){
-    println(data)
-        println(connection)
+        
+        let jsonObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! NSArray
+        println(jsonObject)
     }
     
 }
