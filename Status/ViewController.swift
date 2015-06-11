@@ -31,30 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
         
         
-        
-        
-        
-        
-        
-        //        // TODO: remove this sample data
-        //        updates = [Update]()
-        //
-        //        var user = User()
-        //        user.userName = "Alex"
-        //        user.name = "Alex Kane"
-        //        user.bio = "Me"
-        //        user.city = "San Francisco"
-        //        user.link = "http://alexkanemusic.com"
-        //
-        //        for var i = 0; i < 100; i++ {
-        //            var update = Update()
-        //            update.date = NSDate()
-        //            update.text = "Hello World \(i)"
-        //            update.user = user
-        //
-        //            updates?.append(update)
-        //        }
-        
+
         
         
     }
