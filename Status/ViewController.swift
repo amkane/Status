@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate {
     
@@ -90,12 +91,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let city = userJSON["city"] as! String
             let bio = userJSON["bio"] as! String
             
-            var update = Update()
+            
+            let updateEntityDescription = NSEntityDescription()
+            updateEntityDescription.name = "Update"
+            var update = Update(entity: updateEntityDescription, insertIntoManagedObjectContext: nil)
             update.text = text
             // TODO: convert date interger to NSDate
             
-            
-            var user = User()
+            let userEntityDescription = NSEntityDescription()
+            userEntityDescription.name = "User"
+            var user = User(entity: userEntityDescription, insertIntoManagedObjectContext: nil)
             user.name = name
             user.userName = userName
             user.city = city
