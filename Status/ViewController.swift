@@ -54,13 +54,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var update = updates[indexPath.row]
         cell.updateTextLabel?.text = update.text
         
-        var user = update.user
-        if let user = update.user {
+   
+       let user = update.user
             cell.updateUsername.text = user.userName
             cell.updateUser.text = user.name
             cell.updateCity.text = user.city
-        }
-        
         
         
         
