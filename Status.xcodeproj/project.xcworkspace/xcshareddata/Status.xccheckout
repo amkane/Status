@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>99B84C76-F20D-47CF-8792-FEE5BE64487B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Status</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E5A6FCA4FC2DF625092F0763D7D36D5EF77856EA</key>
 		<string>https://github.com/amkane/Status.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Status.xcodeproj/project.xcworkspace</string>
+	<string>Status.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E5A6FCA4FC2DF625092F0763D7D36D5EF77856EA</key>
