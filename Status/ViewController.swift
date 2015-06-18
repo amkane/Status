@@ -23,6 +23,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         
         
+       performFetchRequest()
+        
+       //  how to retrieve data from the interwebs, in this case a json file
+        
+                let urlString = "https://rawgit.com/jamescmartinez/Status/master/updates.json"
+                let url = NSURL(string: urlString)
+                let request = NSURLRequest(URL: url!)
+                let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+        
+    }
+    
+    //MARK: - Internal
+    
+    func performFetchRequest() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let context = appDelegate.managedObjectContext!
@@ -35,39 +49,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         fetchRequest.predicate = NSPredicate(format: "text != nil")
         let results = context.executeFetchRequest(fetchRequest, error: nil) as! [Update]
         updates = results
+
         
-        // how to retrieve data from the interwebs, in this case a json file
-        
-//        let urlString = "https://rawgit.com/jamescmartinez/Status/master/updates.json"
-//        let url = NSURL(string: urlString)
-//        let request = NSURLRequest(URL: url!)
-//        let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
-//        
     }
+    
     
     //MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let updatesCount = updates.count
-            return updatesCount
+        return updatesCount
         
     }
-
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // TODO: Make this cell reuseable
         
         var cell = NSBundle.mainBundle().loadNibNamed("UpdateTableViewCell", owner: self, options: nil).first as! UpdateTableViewCell
         
-    
-    var update = updates[indexPath.row]
-    cell.updateTextLabel?.text = update.text
         
-   
-     let user = update.user
-            cell.updateUsername.text = user.userName
-            cell.updateUser.text = user.name
-            cell.updateCity.text = user.city
+        var update = updates[indexPath.row]
+        cell.updateTextLabel?.text = update.text
+        
+        
+        let user = update.user
+        cell.updateUsername.text = user.userName
+        cell.updateUser.text = user.name
+        cell.updateCity.text = user.city
         
         
         
@@ -117,7 +126,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             // TODO: convert date interger to NSDate
             
-     let user = User.newObjectInContext(context) as! User
+            let user = User.newObjectInContext(context) as! User
             user.name = name
             user.userName = userName
             user.city = city
@@ -128,9 +137,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             update.user = user
             
-            updates.append(update)
             appDelegate.saveContext()
         }
+        performFetchRequest()
         tableView.reloadData()
     }
     
