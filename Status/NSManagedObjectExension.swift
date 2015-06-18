@@ -9,6 +9,15 @@
 import Foundation
 import CoreData
 
-extension MSManagedObject {
-    func newO
+extension NSManagedObject {
+    
+    class func newObjectInContext(context: NSManagedObjectContext) -> NSManagedObject {
+        
+        let entityName = NSStringFromClass(self).componentsSeparatedByString(".").last!
+        
+        let object = NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: context) as! NSManagedObject
+        
+        return object
+        
+    }
 }
