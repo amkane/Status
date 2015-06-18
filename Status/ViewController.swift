@@ -22,18 +22,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        
-        
         // how to retrieve data from the interwebs, in this case a json file
         
         let urlString = "https://rawgit.com/jamescmartinez/Status/master/updates.json"
         let url = NSURL(string: urlString)
         let request = NSURLRequest(URL: url!)
         let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
-        
-        
-        
-        
         
     }
     
@@ -44,14 +38,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return updatesCount
         
     }
-    
+
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // TODO: Make this cell reuseable
         
         var cell = NSBundle.mainBundle().loadNibNamed("UpdateTableViewCell", owner: self, options: nil).first as! UpdateTableViewCell
         
-        //  var cell = UpdateTableViewCell()
+        
+        var cell = UpdateTableViewCell()
         var update = updates[indexPath.row]
         cell.updateTextLabel?.text = update.text
         
@@ -92,24 +87,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let bio = userJSON["bio"] as! String
             
             
-            let updateEntityDescription = NSEntityDescription()
-            updateEntityDescription.name = "Update"
-            var update = Update(entity: updateEntityDescription, insertIntoManagedObjectContext: nil)
+            
+            
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let context = appDelegate.managedObjectContext!
+            
+            let update = NSEntityDescription.insertNewObjectForEntityForName("Update", inManagedObjectContext: context) as! Update
+            
+            
             update.text = text
+            
+            
+            
+            
+            
             // TODO: convert date interger to NSDate
             
-            let userEntityDescription = NSEntityDescription()
-            userEntityDescription.name = "User"
-            var user = User(entity: userEntityDescription, insertIntoManagedObjectContext: nil)
+     let user = NSEntityDescription.insertNewObjectForEntityForName("Update", inManagedObjectContext: context) as! User
             user.name = name
             user.userName = userName
             user.city = city
             user.bio = bio
             user.link = link
             
+            
+            
             update.user = user
             
             updates.append(update)
+            appDelegate.saveContext()
         }
         tableView.reloadData()
     }
