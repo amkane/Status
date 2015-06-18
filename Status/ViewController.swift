@@ -22,13 +22,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let context = appDelegate.managedObjectContext!
+        
+        
+        let entityDescription = NSEntityDescription.entityForName("Update", inManagedObjectContext: context)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Update")
+        fetchRequest.entity = entityDescription
+        fetchRequest.predicate = NSPredicate(format: "text != nil")
+        let results = context.executeFetchRequest(fetchRequest, error: nil) as! [Update]
+        updates = results
+        
         // how to retrieve data from the interwebs, in this case a json file
         
-        let urlString = "https://rawgit.com/jamescmartinez/Status/master/updates.json"
-        let url = NSURL(string: urlString)
-        let request = NSURLRequest(URL: url!)
-        let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
-        
+//        let urlString = "https://rawgit.com/jamescmartinez/Status/master/updates.json"
+//        let url = NSURL(string: urlString)
+//        let request = NSURLRequest(URL: url!)
+//        let connection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+//        
     }
     
     //MARK: - UITableViewDataSource
@@ -92,6 +106,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             
             let context = appDelegate.managedObjectContext!
+            
             
             let update = Update.newObjectInContext(context) as! Update
             update.text = text
