@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		39C7DB5E1B2FCED200747EA7 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C7DB5D1B2FCED200747EA7 /* Update.swift */; };
 		39C7DB601B2FCED300747EA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C7DB5F1B2FCED300747EA7 /* User.swift */; };
+		39D544301B3262E10003203F /* NSManagedObjectExension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5442F1B3262E10003203F /* NSManagedObjectExension.swift */; };
 		39D5AE3C1B2FC540008FAC6F /* Status.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39D5AE3A1B2FC540008FAC6F /* Status.xcdatamodeld */; };
 		39D657D51B267B3400A073FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657D41B267B3400A073FB /* AppDelegate.swift */; };
 		39D657D71B267B3400A073FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D657D61B267B3400A073FB /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		39C7DB5D1B2FCED200747EA7 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Update.swift; path = ../Update.swift; sourceTree = "<group>"; };
 		39C7DB5F1B2FCED300747EA7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
+		39D5442F1B3262E10003203F /* NSManagedObjectExension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExension.swift; sourceTree = "<group>"; };
 		39D5AE3B1B2FC540008FAC6F /* Status.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Status.xcdatamodel; sourceTree = "<group>"; };
 		39D657CF1B267B3400A073FB /* Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Status.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D657D31B267B3400A073FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				39D657D41B267B3400A073FB /* AppDelegate.swift */,
 				39D5AE3A1B2FC540008FAC6F /* Status.xcdatamodeld */,
 				39D657D61B267B3400A073FB /* ViewController.swift */,
+				39D5442F1B3262E10003203F /* NSManagedObjectExension.swift */,
 				39D657D81B267B3400A073FB /* Main.storyboard */,
 				39C7DB5F1B2FCED300747EA7 /* User.swift */,
 				39C7DB5D1B2FCED200747EA7 /* Update.swift */,
@@ -230,6 +233,7 @@
 			files = (
 				39D657D71B267B3400A073FB /* ViewController.swift in Sources */,
 				39D5AE3C1B2FC540008FAC6F /* Status.xcdatamodeld in Sources */,
+				39D544301B3262E10003203F /* NSManagedObjectExension.swift in Sources */,
 				39C7DB601B2FCED300747EA7 /* User.swift in Sources */,
 				39C7DB5E1B2FCED200747EA7 /* Update.swift in Sources */,
 				39D657FA1B26955200A073FB /* UpdateTableViewCell.swift in Sources */,

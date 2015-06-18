@@ -45,13 +45,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         var cell = NSBundle.mainBundle().loadNibNamed("UpdateTableViewCell", owner: self, options: nil).first as! UpdateTableViewCell
         
-        
-        var cell = UpdateTableViewCell()
-        var update = updates[indexPath.row]
-        cell.updateTextLabel?.text = update.text
+    
+    var update = updates[indexPath.row]
+    cell.updateTextLabel?.text = update.text
         
    
-       let user = update.user
+     let user = update.user
             cell.updateUsername.text = user.userName
             cell.updateUser.text = user.name
             cell.updateCity.text = user.city
@@ -105,7 +104,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             // TODO: convert date interger to NSDate
             
-     let user = NSEntityDescription.insertNewObjectForEntityForName("Update", inManagedObjectContext: context) as! User
+     let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as! User
             user.name = name
             user.userName = userName
             user.city = city
